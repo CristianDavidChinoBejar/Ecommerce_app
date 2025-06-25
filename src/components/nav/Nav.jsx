@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Header, Logo, NavLinks, NavList } from './Nav.styled';
 import './_navList.scss';
+import { useState } from 'react';
 
-const Nav = () => {
+const Nav = ({count}) => {
   return (
     <Header>
       <NavLinks>
@@ -16,7 +17,7 @@ const Nav = () => {
           </NavLinks>
 
           <NavLinks>
-              <NavList><Link className='li-styled' to="/carrito">Carrito🛒0</Link></NavList>
+              <NavList><Link className='li-styled' to="/carrito">Carrito🛒{count}</Link></NavList>
               <NavList><Link className='li-styled' to="/cuenta">👤</Link></NavList>
           </NavLinks>
       </NavLinks>

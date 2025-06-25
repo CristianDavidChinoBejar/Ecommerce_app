@@ -1,7 +1,7 @@
 import Card from '../Card/Card.jsx'
 import {GridLayout} from './Cards.styled.js' 
 
-const Cards = ({products}) => {
+const Cards = ({products, setCount}) => {
   return (
     <GridLayout >
         {
@@ -11,7 +11,8 @@ const Cards = ({products}) => {
                     title={product.title} 
                     image={product.image} 
                     price={product.price}
-                />     
+                    setCount={setCount}
+                />
             ))
         }
     </GridLayout>

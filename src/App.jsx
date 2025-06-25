@@ -6,14 +6,16 @@ import ProductsListPage from './pages/ProductListPage';
 import './styles/_global.scss';
 import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
+import { useState } from 'react';
 
 function App() {
+  const [count, setCount] = useState(0)
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-      <Nav />
+      <Nav count={count}/>
         <Routes>
-          <Route path='/' element={<HomePage />} />
+          <Route path='/' element={<HomePage setCount={setCount} />} />
           <Route path='/products' element={<ProductsPage />} />
           <Route path='/productlist' element={<ProductsListPage/>} />
         </Routes>

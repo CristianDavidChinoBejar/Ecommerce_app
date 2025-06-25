@@ -1,9 +1,9 @@
 import Home from '../components/home/Home.jsx';
 
-const HomePage = () => {
+const HomePage = ({setCount}) => {
   return (
     <>
-      <Home />
+      <Home setCount={setCount} />
     </>
   )
 }
