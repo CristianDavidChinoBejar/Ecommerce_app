@@ -3,7 +3,10 @@ import { CardContainer, CardTitle, CardImage, CardPrice, CardButton } from "./Ca
 const Card = ({ title, image, price, setCartItems}) => {
     const handleClick = () => {
     const product = { title, price };
-    setCartItems(prev => [...prev, product]);
+    setCartItems(prev => [product, ...prev]);
+
+    window.dispatchEvent(new Event('cart-updated'));
+
   };
 
   return (

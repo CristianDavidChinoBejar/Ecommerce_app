@@ -1,9 +1,28 @@
 import { Link } from 'react-router-dom';
 import { Header, Logo, NavLinks, NavList } from './Nav.styled';
 import './_navList.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const Nav = ({count}) => {
+const Nav = ({}) => {
+  const [count, setCount] = useState(()=>{
+    const data = localStorage.getItem('cart')
+    return data ? JSON.parse(data).length : 0
+  })
+  
+   useEffect(() => {
+    const handleStorageChange = () => {
+      const updated = localStorage.getItem('cart');
+      setCount(updated ? JSON.parse(updated).length : 0);
+    };
+
+    window.addEventListener('cart-updated', handleStorageChange);
+
+    return () => {
+      window.removeEventListener('cart-updated', handleStorageChange);
+    };
+  }, []);
+
+
   return (
     <Header>
       <NavLinks>
