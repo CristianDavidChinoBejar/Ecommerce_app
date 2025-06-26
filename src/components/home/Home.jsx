@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import Cards from "../Cards/Cards"
 
-const Home = ({setCount}) => {
+const Home = ({setCount, setCartItems}) => {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
@@ -13,7 +13,8 @@ const Home = ({setCount}) => {
     <Cards
       products={products}
       setCount={setCount}
-    />  
+      setCartItems={setCartItems}
+    />
   )
 }
 

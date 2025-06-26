@@ -1,9 +1,12 @@
 import Home from '../components/home/Home.jsx';
 
-const HomePage = ({setCount}) => {
+const HomePage = ({setCount, setCartItems}) => {
   return (
     <>
-      <Home setCount={setCount} />
+      <Home 
+        setCount={setCount} 
+        setCartItems={setCartItems} 
+      />
     </>
   )
 }
