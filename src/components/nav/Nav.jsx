@@ -3,7 +3,7 @@ import { Header, Logo, NavLinks, NavList } from './Nav.styled';
 import './_navList.scss';
 import { useState, useEffect } from 'react';
 
-const Nav = ({}) => {
+const Nav = () => {
   const [count, setCount] = useState(()=>{
     const data = localStorage.getItem('cart')
     return data ? JSON.parse(data).length : 0

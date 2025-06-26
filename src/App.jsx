@@ -9,8 +9,6 @@ import { theme } from './styles/theme';
 import { useState, useEffect } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0)
-  
   const [cartItems, setCartItems] = useState(() => {
     const localData = localStorage.getItem('cart');
     return localData ? JSON.parse(localData) : [];
@@ -22,13 +20,12 @@ useEffect(() => {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-      <Nav count={count}/>
+      <Nav/>
         <Routes>
           <Route 
             path='/' 
             element={
-              <HomePage 
-                setCount={setCount} 
+              <HomePage
                 setCartItems={setCartItems}
               />}
           />
